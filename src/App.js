@@ -49,7 +49,7 @@ function App() {
 
   async function getStripeApiKey() {
     try {
-      const response = await axios.get("http://localhost:4000/api/v1/stripeapikey", {
+      const response = await axios.get("https://e-commerce-backend-9v8h.onrender.com/api/v1/stripeapikey", {
         withCredentials: true // This adds the credentials to the request
       });
       setStripeApiKey(response.data.stripeApiKey);

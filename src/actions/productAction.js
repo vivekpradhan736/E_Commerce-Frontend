@@ -39,10 +39,10 @@ export const getProduct = (keyword = "", currentPage = 1, price = [0, 25000], ca
       dispatch({ type: ALL_PRODUCT_REQUEST });
       console.log("test 3")
 
-      let link = `http://localhost:4000/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
+      let link = `https://e-commerce-backend-9v8h.onrender.com/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
 
       if (category) {
-        link = `http://localhost:4000/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
+        link = `https://e-commerce-backend-9v8h.onrender.com/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&ratings[gte]=${ratings}`;
       }
       console.log("test 4")
 
@@ -69,7 +69,7 @@ export const getAdminProduct = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
 
-    const { data } = await axios.get("http://localhost:4000/api/v1/admin/products", {
+    const { data } = await axios.get("https://e-commerce-backend-9v8h.onrender.com/api/v1/admin/products", {
       withCredentials: true // This adds the credentials to the request
     });
 
@@ -95,7 +95,7 @@ export const createProduct = (productData) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:4000/api/v1/admin/product/new",
+      "https://e-commerce-backend-9v8h.onrender.com/api/v1/admin/product/new",
       productData,
       config, {
         withCredentials: true // This adds the credentials to the request
@@ -127,7 +127,7 @@ export const updateProduct = (id, productData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      `http://localhost:4000/api/v1/admin/product/${id}`,
+      `https://e-commerce-backend-9v8h.onrender.com/api/v1/admin/product/${id}`,
       productData,
       config, {
         withCredentials: true // This adds the credentials to the request
@@ -151,7 +151,7 @@ export const deleteProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
 
-    const { data } = await axios.delete(`http://localhost:4000/api/v1/admin/product/${id}`, {
+    const { data } = await axios.delete(`https://e-commerce-backend-9v8h.onrender.com/api/v1/admin/product/${id}`, {
       withCredentials: true // This adds the credentials to the request
     });
 
@@ -172,7 +172,7 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`http://localhost:4000/api/v1/product/${id}`, {
+    const { data } = await axios.get(`https://e-commerce-backend-9v8h.onrender.com/api/v1/product/${id}`, {
       withCredentials: true // This adds the credentials to the request
     });
 
@@ -197,7 +197,7 @@ export const newReview = (reviewData) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
 
-    const { data } = await axios.put(`http://localhost:4000/api/v1/review`, reviewData, config, {
+    const { data } = await axios.put(`https://e-commerce-backend-9v8h.onrender.com/api/v1/review`, reviewData, config, {
       withCredentials: true // This adds the credentials to the request
     });
 
@@ -218,7 +218,7 @@ export const getAllReviews = (id) => async (dispatch) => {
   try {
     dispatch({ type: ALL_REVIEW_REQUEST });
 
-    const { data } = await axios.get(`http://localhost:4000/api/v1/reviews?id=${id}`, {
+    const { data } = await axios.get(`https://e-commerce-backend-9v8h.onrender.com/api/v1/reviews?id=${id}`, {
       withCredentials: true // This adds the credentials to the request
     });
 
@@ -240,7 +240,7 @@ export const deleteReviews = (reviewId, productId) => async (dispatch) => {
     dispatch({ type: DELETE_REVIEW_REQUEST });
 
     const { data } = await axios.delete(
-      `http://localhost:4000/api/v1/reviews?id=${reviewId}&productId=${productId}`, {
+      `https://e-commerce-backend-9v8h.onrender.com/api/v1/reviews?id=${reviewId}&productId=${productId}`, {
         withCredentials: true // This adds the credentials to the request
       });
 

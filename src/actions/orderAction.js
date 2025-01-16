@@ -32,7 +32,7 @@ import {
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.post("http://localhost:4000/api/v1/order/new", order, config, {
+      const { data } = await axios.post("https://e-commerce-backend-9v8h.onrender.com/api/v1/order/new", order, config, {
         withCredentials: true // This adds the credentials to the request
       });
   
@@ -50,7 +50,7 @@ import {
     try {
       dispatch({ type: MY_ORDERS_REQUEST });
   
-      const { data } = await axios.get("http://localhost:4000/api/v1/orders/me", {
+      const { data } = await axios.get("https://e-commerce-backend-9v8h.onrender.com/api/v1/orders/me", {
         withCredentials: true // This adds the credentials to the request
       });
   
@@ -68,7 +68,7 @@ import {
     try {
       dispatch({ type: ALL_ORDERS_REQUEST });
   
-      const { data } = await axios.get("http://localhost:4000/api/v1/admin/orders", {
+      const { data } = await axios.get("https://e-commerce-backend-9v8h.onrender.com/api/v1/admin/orders", {
         withCredentials: true // This adds the credentials to the request
       });
   
@@ -92,7 +92,7 @@ import {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/admin/order/${id}`,
+        `https://e-commerce-backend-9v8h.onrender.com/api/v1/admin/order/${id}`,
         order,
         config, {
           withCredentials: true // This adds the credentials to the request
@@ -113,7 +113,7 @@ import {
     try {
       dispatch({ type: DELETE_ORDER_REQUEST });
   
-      const { data } = await axios.delete(`http://localhost:4000/api/v1/admin/order/${id}`, {
+      const { data } = await axios.delete(`https://e-commerce-backend-9v8h.onrender.com/api/v1/admin/order/${id}`, {
         withCredentials: true // This adds the credentials to the request
       });
   
@@ -131,7 +131,7 @@ import {
     try {
       dispatch({ type: ORDER_DETAILS_REQUEST });
   
-      const { data } = await axios.get(`http://localhost:4000/api/v1/order/${id}`, {
+      const { data } = await axios.get(`https://e-commerce-backend-9v8h.onrender.com/api/v1/order/${id}`, {
         withCredentials: true // This adds the credentials to the request
       });
   
